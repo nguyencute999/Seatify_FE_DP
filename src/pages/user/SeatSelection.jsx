@@ -34,7 +34,7 @@ const SeatSelection = () => {
   useEffect(() => {
     if (bookingMessage) {
       // You can replace alert with a toast notification
-      alert(bookingMessage);
+      toast.success(bookingMessage);
       dispatch(clearMessage());
     }
   }, [bookingMessage, dispatch]);
@@ -43,7 +43,7 @@ const SeatSelection = () => {
   useEffect(() => {
     if (bookingError) {
       // You can replace alert with a toast notification
-      alert(bookingError);
+      toast.error(bookingError);
       dispatch(clearError());
     }
   }, [bookingError, dispatch]);
