@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -14,6 +14,7 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { loading, error, message, token, roles } = useSelector(state => state.auth);
+  const hasRedirectedRef = useRef(false);
 
   const [formData, setFormData] = useState({
     email: '',
@@ -34,7 +35,9 @@ const LoginPage = () => {
 
   // Handle successful login - redirect based on user role
   useEffect(() => {
-    if (token && roles && roles.length > 0) {
+    if (token && roles && roles.length > 0 && !hasRedirectedRef.current) {
+      hasRedirectedRef.current = true;
+      
       // Save to localStorage
       localStorage.setItem('auth', JSON.stringify({
         token,
@@ -43,18 +46,20 @@ const LoginPage = () => {
         timestamp: Date.now()
       }));
 
-     if (roles.includes('ROLE_ADMIN')) {
+      if (roles.includes('ROLE_ADMIN')) {
+        // Hiển thị toast trước
         toast.success('Đăng nhập thành công! Chuyển hướng đến Admin Dashboard...');
-        // Delay navigation to ensure toast is displayed
+        // Delay navigation để toast có thời gian render và hiển thị (800ms để đảm bảo)
         setTimeout(() => {
           navigate('/admin/dashboard', { replace: true });
-        }, 100);
+        }, 800);
       } else {
+        // Hiển thị toast trước
         toast.success('Đăng nhập thành công!');
-        // Delay navigation to ensure toast is displayed
+        // Delay navigation để toast có thời gian render và hiển thị
         setTimeout(() => {
           navigate('/', { replace: true });
-        }, 100);
+        }, 800);
       }
     }
   }, [token, roles, navigate, formData.email]);
