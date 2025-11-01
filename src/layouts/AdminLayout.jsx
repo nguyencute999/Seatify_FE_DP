@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import { logout } from '../redux/auth/authSlice';
 import logo from '../images/logo.jpg';
 
@@ -59,6 +60,8 @@ const AdminLayout = () => {
   ];
 
   const handleLogout = () => {
+    // Dismiss all toasts before logging out to prevent old toasts from showing
+    toast.dismiss();
     dispatch(logout());
     navigate('/');
   };
