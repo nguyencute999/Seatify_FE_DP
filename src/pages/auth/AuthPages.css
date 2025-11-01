@@ -208,53 +208,6 @@
   font-size: 0.9rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .login-page,
-  .register-page,
-  .forgot-password-page {
-    padding: 10px;
-  }
-  
-  .login-card,
-  .register-card,
-  .forgot-password-card {
-    padding: 30px 20px;
-    border-radius: 15px;
-  }
-  
-  .login-title,
-  .register-title,
-  .forgot-password-title {
-    font-size: 1.5rem;
-  }
-  
-  .form-control {
-    padding: 10px 14px;
-  }
-  
-  .btn-login,
-  .btn-register,
-  .btn-forgot,
-  .btn-reset {
-    padding: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .login-card,
-  .register-card,
-  .forgot-password-card {
-    padding: 20px 15px;
-  }
-  
-  .login-title,
-  .register-title,
-  .forgot-password-title {
-    font-size: 1.3rem;
-  }
-}
-
 /* Loading State */
 .btn:disabled {
   cursor: not-allowed;

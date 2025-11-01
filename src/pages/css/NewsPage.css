@@ -386,29 +386,3 @@
   width: 20px;
   font-size: 1.3rem;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .news-detail-image {
-    height: 300px;
-  }
-
-  .news-detail-body {
-    padding: 2rem 1.5rem;
-  }
-
-  .news-detail-title {
-    font-size: 1.8rem;
-  }
-
-  .news-detail-content-text p {
-    font-size: 1rem;
-    line-height: 1.8;
-  }
-
-  .news-detail-back-btn {
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-  }
-}
-

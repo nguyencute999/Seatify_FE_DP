@@ -299,12 +299,6 @@
   font-size: 0.95rem; /* compact */
 }
 
-/* Responsive tweaks for smaller heights */
-@media (max-width: 768px) {
-  .events-filter { padding: 0.5rem; }
-  .events-search input { height: 38px; }
-  .time-filter-btn { min-width: 100px; padding: 0.45rem 0.8rem; }
-}
 
 /* Modern Pagination Styles */
 .pagination-container {
