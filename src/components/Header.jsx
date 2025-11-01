@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import { logout } from '../redux/auth/authSlice';
 import './css/Header.css';
 import AnimatedLoginButton from './ui/AnimatedLoginButton.jsx';
@@ -98,6 +99,8 @@ const Header = () => {
 
   // Handle logout
   const handleLogout = () => {
+    // Dismiss all toasts before logging out to prevent old toasts from showing
+    toast.dismiss();
     dispatch(logout());
     setIsMenuOpen(false);
   };
