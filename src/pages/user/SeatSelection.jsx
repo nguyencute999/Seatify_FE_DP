@@ -135,7 +135,7 @@ const SeatSelection = () => {
       
       // Nếu đặt chỗ thành công, chuyển đến trang chi tiết đặt chỗ
       if (result && result.bookingId) {
-        navigate(`/bookings/${result.bookingId}`);
+        navigate(`/`);
       }
     } catch (error) {
       console.error('Booking error:', error);
