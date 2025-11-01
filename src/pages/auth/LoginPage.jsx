@@ -43,12 +43,18 @@ const LoginPage = () => {
         timestamp: Date.now()
       }));
 
-      if (roles.includes('ROLE_ADMIN')) {
+     if (roles.includes('ROLE_ADMIN')) {
         toast.success('Đăng nhập thành công! Chuyển hướng đến Admin Dashboard...');
-        navigate('/admin/dashboard', { replace: true });
+        // Delay navigation to ensure toast is displayed
+        setTimeout(() => {
+          navigate('/admin/dashboard', { replace: true });
+        }, 100);
       } else {
         toast.success('Đăng nhập thành công!');
-        navigate('/', { replace: true });
+        // Delay navigation to ensure toast is displayed
+        setTimeout(() => {
+          navigate('/', { replace: true });
+        }, 100);
       }
     }
   }, [token, roles, navigate, formData.email]);
