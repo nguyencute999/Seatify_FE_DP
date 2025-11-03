@@ -268,7 +268,6 @@ const FormLogin = ({ isOpen, onClose }) => {
     if (token && roles.length > 0 && !hasHandledLoginRef.current) {
       hasHandledLoginRef.current = true;
       onClose();
-      toast.dismiss();
       toast.success('Đăng nhập thành công!');
       // Redirect logic is now handled by AuthRedirectHandler
     }

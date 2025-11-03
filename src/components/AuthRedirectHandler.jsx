@@ -23,10 +23,7 @@ const AuthRedirectHandler = ({ children }) => {
       // Nếu là admin và không đang ở trang admin, redirect đến admin
       if (isAdmin && !isOnAdminPage) {
         console.log('Admin detected, redirecting to /admin/dashboard');
-        // Delay để toast có thời gian hiển thị
-        setTimeout(() => {
-          navigate('/admin/dashboard', { replace: true });
-        }, 300);
+        navigate('/admin/dashboard', { replace: true });
       }
       // Nếu là user thường và đang ở trang admin, redirect về trang chủ
       else if (!isAdmin && isOnAdminPage) {

@@ -102,8 +102,6 @@ const Header = () => {
 
   // Handle logout
   const handleLogout = () => {
-    // Dismiss all toasts before logging out to prevent old toasts from showing
-    toast.dismiss();
     dispatch(logout());
     setIsMenuOpen(false);
   };

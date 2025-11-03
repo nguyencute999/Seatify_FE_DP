@@ -34,7 +34,8 @@ const ForgotPasswordPage = () => {
   useEffect(() => {
     if (error) {
       toast.error(error);
-      // dispatch(clearError());
+      // Clear error after showing so it won't repeat
+      dispatch(clearError());
     }
     if (message) {
       toast.success(message);

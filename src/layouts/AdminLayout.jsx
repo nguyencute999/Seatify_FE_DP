@@ -60,8 +60,6 @@ const AdminLayout = () => {
   ];
 
   const handleLogout = () => {
-    // Dismiss all toasts before logging out to prevent old toasts from showing
-    toast.dismiss();
     dispatch(logout());
     navigate('/');
   };

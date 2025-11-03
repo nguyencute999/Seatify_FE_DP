@@ -60,10 +60,8 @@ const OAuth2RedirectPage = () => {
       
       if (!shownRef.current) {
         shownRef.current = true;
-        toast.dismiss();
         toast.success("Đăng nhập Google thành công!");
-        
-        // Redirect based on user role
+        // Redirect based on user role immediately; ToastContainer is global so toast persists
         if (rolesArray.includes('ROLE_ADMIN')) {
           navigate("/admin/dashboard", { replace: true });
         } else {

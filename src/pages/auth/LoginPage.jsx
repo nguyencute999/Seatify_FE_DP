@@ -26,6 +26,8 @@ const LoginPage = () => {
   useEffect(() => {
     if (error) {
       toast.error(error);
+      // Clear error so it doesn't retrigger on future renders
+      dispatch(clearError());
     }
     if (message) {
       toast.success(message);
@@ -47,19 +49,11 @@ const LoginPage = () => {
       }));
 
       if (roles.includes('ROLE_ADMIN')) {
-        // Hiển thị toast trước
         toast.success('Đăng nhập thành công! Chuyển hướng đến Admin Dashboard...');
-        // Delay navigation để toast có thời gian render và hiển thị (800ms để đảm bảo)
-        setTimeout(() => {
-          navigate('/admin/dashboard', { replace: true });
-        }, 800);
+        navigate('/admin/dashboard', { replace: true });
       } else {
-        // Hiển thị toast trước
         toast.success('Đăng nhập thành công!');
-        // Delay navigation để toast có thời gian render và hiển thị
-        setTimeout(() => {
-          navigate('/', { replace: true });
-        }, 800);
+        navigate('/', { replace: true });
       }
     }
   }, [token, roles, navigate, formData.email]);
