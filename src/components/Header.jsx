@@ -147,7 +147,7 @@ const Header = () => {
         </button>
 
         {/* Logo Section - Center*/}
-        <div className="logo-section">
+        <Link to="/" className="logo-section" aria-label="Go to home">
           <div className="logo-icon">
             <img 
               src={logo} 
@@ -159,7 +159,7 @@ const Header = () => {
             <h1 className="brand-name">SEATIFY</h1>
             {/* <p className="brand-subtitle">FPT Seminar Check-in</p> */}
           </div>
-        </div>
+        </Link>
 
         {/* Navigation Menu */}
         <nav className="navigation">

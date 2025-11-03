@@ -147,3 +147,176 @@
   margin: 0;
 }
 
+
+/*Responsive:1024px (desktop breakpoint)*/
+@media (max-width: 1024px) {
+  .footer-container {
+    max-width: 1024px;
+    padding: 1.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .branding-section {
+    max-width: none;
+  }
+
+  .footer .brand-name {
+    font-size: 1.4rem;
+  }
+
+  .brand-description {
+    font-size: 0.9rem;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .footer .section-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .contact-info {
+    gap: 0.6rem;
+  }
+
+  .contact-item {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    margin-top: 1.5rem;
+  }
+}
+
+/*Responsive:768px (tablet breakpoint)*/
+@media (max-width: 768px) {
+  .footer-container {
+    max-width: 768px;
+    padding: 1.25rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer .brand-name {
+    font-size: 1.25rem;
+  }
+
+  .brand-description {
+    font-size: 0.85rem;
+  }
+
+  .social-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .footer .section-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.45rem;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+
+  .contact-info {
+    gap: 0.5rem;
+  }
+
+  .contact-item {
+    font-size: 0.85rem;
+  }
+
+  .footer-bottom {
+    margin-top: 1.25rem;
+  }
+}
+
+/*Responsive:480px (mobile breakpoint)*/
+@media (max-width: 480px) {
+  .footer-container {
+    max-width: 480px;
+    padding: 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .footer-section {
+    align-items: flex-start;
+  }
+
+  .branding-section {
+    max-width: none;
+  }
+
+  .footer .brand-name {
+    font-size: 1.15rem;
+  }
+
+  .brand-description {
+    font-size: 0.85rem;
+  }
+
+  .social-media {
+    gap: 0.75rem;
+  }
+
+  .social-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+  }
+
+  .footer .section-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-links a {
+    font-size: 0.85rem;
+  }
+
+  .contact-item {
+    font-size: 0.85rem;
+  }
+
+  .contact-icon {
+    font-size: 0.95rem;
+    width: 18px;
+  }
+
+  .footer-bottom {
+    margin-top: 1rem;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+  }
+}

@@ -621,3 +621,218 @@
 }
 
 
+
+/* Responsive: Desktop ≤1024px */
+@media (max-width: 1024px) {
+  .about-page {
+    max-width: 1024px;
+    padding: 1.5rem;
+  }
+
+  /* Hero */
+  .about-page .hero-title {
+    font-size: 2.5rem;
+  }
+  .about-page .hero-description {
+    font-size: 1.1rem;
+    max-width: 720px;
+  }
+
+  /* Problem & Solution */
+  .problem-solution-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .problem-card, .solution-card {
+    padding: 1.5rem;
+  }
+  .card-title { font-size: 1.35rem; }
+  .card-title .icon { font-size: 1.35rem; }
+  .card-content p { font-size: 0.95rem; }
+
+  /* Vision & Mission */
+  .vision-mission-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .vision-card, .mission-card {
+    padding: 1.5rem;
+  }
+
+  /* Section headers */
+  .section-title { font-size: 2.2rem; }
+  .section-subtitle { font-size: 1.05rem; }
+
+  /* Values */
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .value-card { padding: 1.5rem; }
+  .value-icon { width: 3.5rem; height: 3.5rem; font-size: 1.35rem; }
+  .value-title { font-size: 1.15rem; }
+
+  /* How it works */
+  .how-it-works-section { padding: 2.25rem; margin-bottom: 3rem; }
+  .steps-grid { gap: 1.5rem; }
+  .step-number { width: 3.5rem; height: 3.5rem; font-size: 1.35rem; }
+  .step-title { font-size: 1.15rem; }
+
+  /* Timeline */
+  .timeline { max-width: 900px; }
+  .timeline-item { margin-bottom: 2.5rem; }
+  .timeline-content { width: 48%; padding: 1.25rem; }
+  .timeline-title { font-size: 1.15rem; }
+
+  /* Team */
+  .team-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .team-card { padding: 1.5rem; }
+  .team-avatar { width: 110px; height: 110px; }
+  .team-name { font-size: 1.15rem; }
+
+  /* Stats */
+  .stats-section { padding: 2.25rem; }
+  .stats-title { font-size: 2.2rem; }
+  .stat-number { font-size: 2.6rem; }
+
+  /* Mentor */
+  .mentor-card { max-width: 660px; padding: 1.5rem 1.25rem 1.75rem; }
+  .mentor-badge { font-size: 1.2rem; }
+  .mentor-avatar { width: 130px; height: 130px; }
+  .mentor-name { font-size: 1.3rem; }
+}
+
+/* Responsive: Tablet ≤768px */
+@media (max-width: 768px) {
+  .about-page {
+    max-width: 768px;
+    padding: 1.25rem;
+  }
+
+  /* Hero */
+  .about-page .hero-section { margin-bottom: 1.5rem; }
+  .about-page .hero-title { font-size: 2rem; margin-bottom: 1rem; }
+  .about-page .hero-description { font-size: 1rem; max-width: 640px; }
+
+  /* Problem & Solution */
+  .problem-solution-section {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .problem-card, .solution-card { padding: 1.25rem; }
+  .card-title { font-size: 1.25rem; }
+  .card-title .icon { font-size: 1.25rem; }
+  .card-content p { font-size: 0.95rem; }
+
+  /* Vision & Mission */
+  .vision-mission-section {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .vision-card, .mission-card { padding: 1.25rem; }
+
+  /* Section headers */
+  .section-title { font-size: 2rem; }
+  .section-subtitle { font-size: 1rem; }
+
+  /* Values */
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .value-card { padding: 1.25rem; }
+  .value-icon { width: 3.25rem; height: 3.25rem; font-size: 1.25rem; }
+  .value-title { font-size: 1.1rem; }
+
+  /* How it works */
+  .how-it-works-section { padding: 2rem; margin-bottom: 2.5rem; }
+  .steps-grid { gap: 1.25rem; }
+  .step-number { width: 3.25rem; height: 3.25rem; font-size: 1.25rem; }
+  .step-title { font-size: 1.1rem; }
+
+  /* Team */
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .team-card { padding: 1.25rem; }
+  .team-avatar { width: 100px; height: 100px; }
+  .team-name { font-size: 1.1rem; }
+
+  /* Stats */
+  .stats-section { padding: 2rem; }
+  .stats-title { font-size: 2rem; }
+  .stat-number { font-size: 2.3rem; }
+
+  /* Mentor */
+  .mentor-card { max-width: 640px; padding: 1.25rem 1rem 1.5rem; }
+  .mentor-badge { font-size: 1.1rem; }
+  .mentor-avatar { width: 120px; height: 120px; }
+  .mentor-name { font-size: 1.2rem; }
+}
+
+/* Responsive: Mobile ≤480px (keep Timeline as desktop) */
+@media (max-width: 480px) {
+  .about-page {
+    max-width: 480px;
+    padding: 1rem;
+  }
+
+  /* Hero */
+  .about-page .hero-section { margin-bottom: 1.25rem; }
+  .about-page .hero-title { font-size: 1.75rem; margin-bottom: 0.75rem; }
+  .about-page .hero-description { font-size: 0.95rem; max-width: 420px; }
+
+  /* Problem & Solution */
+  .problem-solution-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .problem-card, .solution-card { padding: 1rem; }
+  .card-title { font-size: 1.15rem; }
+  .card-title .icon { font-size: 1.15rem; }
+  .card-content p { font-size: 0.9rem; }
+
+  /* Vision & Mission */
+  .vision-mission-section {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .vision-card, .mission-card { padding: 1rem; }
+
+  /* Section headers */
+  .section-title { font-size: 1.75rem; }
+  .section-subtitle { font-size: 0.95rem; }
+
+  /* Values */
+  .values-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .value-card { padding: 1rem; }
+  .value-icon { width: 3rem; height: 3rem; font-size: 1.1rem; }
+  .value-title { font-size: 1.05rem; }
+
+  /* How it works */
+  .how-it-works-section { padding: 1.5rem; margin-bottom: 2rem; }
+  .steps-grid { gap: 1rem; }
+  .step-number { width: 3rem; height: 3rem; font-size: 1.1rem; }
+  .step-title { font-size: 1.05rem; }
+
+  /* Team */
+  .team-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .team-card { padding: 1rem; }
+  .team-avatar { width: 90px; height: 90px; }
+  .team-name { font-size: 1.05rem; }
+
+  /* Stats */
+  .stats-section { padding: 1.5rem; }
+  .stats-title { font-size: 1.75rem; }
+  .stat-number { font-size: 2rem; }
+
+  /* Mentor */
+  .mentor-card { max-width: 100%; padding: 1rem 0.9rem 1.25rem; }
+  .mentor-badge { font-size: 1.05rem; }
+  .mentor-avatar { width: 110px; height: 110px; }
+  .mentor-name { font-size: 1.15rem; }
+}
