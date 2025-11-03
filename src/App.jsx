@@ -6,34 +6,31 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ChatWidget from './components/ChatWidget';
 import GoToTopButton from './components/GoToTopButton';
-import AuthRedirectHandler from './components/AuthRedirectHandler';
 import './index.css';
 
 function App() {
   return (
-    <AuthRedirectHandler>
-      <div className="app">
-        <Header />
-        <main className="main-content">
-          <Outlet />
-        </main>
-        <Footer />
-        <GoToTopButton />
-        <ChatWidget />
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
-      </div>
-    </AuthRedirectHandler>
+    <div className="app">
+      <Header />
+      <main className="main-content">
+        <Outlet />
+      </main>
+      <Footer />
+      <GoToTopButton />
+      <ChatWidget />
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+    </div>
   );
 }
 

@@ -8,11 +8,11 @@ const ProtectedRoute = ({ children, requireAdmin = false }) => {
 
   // If no token, redirect to login
   if (!token) {
-    return <Navigate to="/" state={{ from: location }} replace />;
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   // If admin required but user is not admin
-  if (requireAdmin && !roles.includes('ROLE_ADMIN')) {
+  if (requireAdmin && !(Array.isArray(roles) && roles.includes('ROLE_ADMIN'))) {
     return <Navigate to="/" replace />;
   }
 

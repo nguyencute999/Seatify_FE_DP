@@ -6,19 +6,25 @@ const AuthInitializer = ({ children }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // Check if there's auth data in sessionStorage
-    const authData = sessionStorage.getItem('auth');
+    // Restore auth state from localStorage for persistence across sessions
+    const authData = localStorage.getItem('auth');
     if (authData) {
       try {
         const parsedAuth = JSON.parse(authData);
-        if (parsedAuth.token && parsedAuth.email) {
-          // Restore auth state from sessionStorage
-          dispatch(setAuthFromStorage(parsedAuth));
+        // Only require token; roles/email are optional and can be populated later
+        if (parsedAuth.token) {
+          const normalized = {
+            token: parsedAuth.token,
+            roles: Array.isArray(parsedAuth.roles) ? parsedAuth.roles : [],
+            email: parsedAuth.email || '',
+            timestamp: parsedAuth.timestamp || Date.now()
+          };
+          dispatch(setAuthFromStorage(normalized));
         }
       } catch (error) {
-        console.error('Error parsing auth data from sessionStorage:', error);
+        console.error('Error parsing auth data from localStorage:', error);
         // Clear invalid data
-        sessionStorage.removeItem('auth');
+        localStorage.removeItem('auth');
       }
     }
   }, [dispatch]);
