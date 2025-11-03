@@ -14,8 +14,10 @@ const Header = () => {
   const { token, userEmail, roles } = useSelector(state => state.auth);
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
+  const mobileMenuRef = useRef(null);
   const [avatarUrl, setAvatarUrl] = useState('');
   const [fullName, setFullName] = useState('');
 
@@ -84,6 +86,7 @@ const Header = () => {
   // Handle navigation click
   const handleNavClick = (item) => {
     setActiveSection(item.id);
+    setIsMobileMenuOpen(false); // Đóng mobile menu khi click nav item
     
     // If it's a section on the same page, scroll to it
     const element = document.getElementById(item.id);
@@ -111,15 +114,39 @@ const Header = () => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsMenuOpen(false);
       }
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target) && !event.target.closest('.mobile-menu-btn')) {
+        setIsMobileMenuOpen(false);
+      }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <header className="header">
       <div className="header-container">
-        {/* Logo Section */}
+        {/* Mobile Menu Button*/}
+        <button 
+          className="mobile-menu-btn"
+          onClick={() => setIsMobileMenuOpen(v => !v)}
+          aria-label="Toggle menu"
+        >
+          <i className={`bi ${isMobileMenuOpen ? 'bi-x-lg' : 'bi-list'}`}></i>
+        </button>
+
+        {/* Logo Section - Center*/}
         <div className="logo-section">
           <div className="logo-icon">
             <img 
@@ -205,6 +232,60 @@ const Header = () => {
             </div>
           ) : (
             <AnimatedLoginButton onClick={handleLoginClick} />
+          )}
+        </div>
+      </div>
+
+      {/* Mobile Sidebar Menu */}
+      <div 
+        className={`mobile-sidebar-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      >
+        <div 
+          className={`mobile-sidebar ${isMobileMenuOpen ? 'active' : ''}`}
+          ref={mobileMenuRef}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="mobile-sidebar-header">
+            <h3>Menu</h3>
+            <button 
+              className="mobile-sidebar-close"
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <i className="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <ul className="mobile-nav-list">
+            {navItems.map((item) => (
+              <li 
+                key={item.id}
+                className={`mobile-nav-item ${activeSection === item.id ? 'active' : ''}`}
+              >
+                <Link 
+                  to={item.href} 
+                  className="mobile-nav-link"
+                  onClick={() => handleNavClick(item)}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          
+          {/* Login Button trong Mobile Sidebar */}
+          {!token && (
+            <div className="mobile-sidebar-footer">
+              <button 
+                className="mobile-login-btn"
+                onClick={() => {
+                  handleLoginClick();
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Đăng nhập
+              </button>
+            </div>
           )}
         </div>
       </div>
