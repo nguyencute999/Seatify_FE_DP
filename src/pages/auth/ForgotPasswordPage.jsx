@@ -30,25 +30,20 @@ const ForgotPasswordPage = () => {
     dispatch(clearMessage());
   }, [dispatch]);
 
-  // Show toast notifications for errors and messages
+  // Phản ứng với message/error (toast hiển thị toàn cục)
   useEffect(() => {
     if (error) {
-      toast.error(error);
-      // Clear error after showing so it won't repeat
+      // Clear để tránh lặp; toast đã được GlobalToastListener hiển thị
       dispatch(clearError());
     }
     if (message) {
-      toast.success(message);
-      dispatch(clearMessage());
-      
       if (step === 1) {
-        setStep(2); 
+        setStep(2);
       } else if (step === 2) {
-        // Reset thành công, chuyển về trang login
-        setTimeout(() => {
-          navigate('/login', { replace: true });
-        }, 2000);
+        navigate('/login', { replace: true });
       }
+      // Clear message do listener đã show xong
+      dispatch(clearMessage());
     }
   }, [error, message, dispatch, step, navigate]);
 

@@ -22,18 +22,7 @@ const LoginPage = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
 
-  // Show toast notifications for errors and messages
-  useEffect(() => {
-    if (error) {
-      toast.error(error);
-      // Clear error so it doesn't retrigger on future renders
-      dispatch(clearError());
-    }
-    if (message) {
-      toast.success(message);
-      dispatch(clearMessage());
-    }
-  }, [error, message, dispatch]);
+  // Toasts are handled globally by GlobalToastListener
 
   // Handle successful login - redirect based on user role
   useEffect(() => {
