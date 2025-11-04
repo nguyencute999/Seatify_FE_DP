@@ -22,8 +22,6 @@ const LoginPage = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
 
-  // Toasts are handled globally by GlobalToastListener
-
   // Handle successful login - redirect based on user role
   useEffect(() => {
     if (token && roles && roles.length > 0 && !hasRedirectedRef.current) {
