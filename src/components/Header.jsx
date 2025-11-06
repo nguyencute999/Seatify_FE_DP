@@ -15,9 +15,11 @@ const Header = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileAccountOpen, setIsMobileAccountOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
   const mobileMenuRef = useRef(null);
+  const mobileAccountRef = useRef(null);
   const [avatarUrl, setAvatarUrl] = useState('');
   const [fullName, setFullName] = useState('');
 
@@ -114,6 +116,9 @@ const Header = () => {
       }
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target) && !event.target.closest('.mobile-menu-btn')) {
         setIsMobileMenuOpen(false);
+      }
+      if (mobileAccountRef.current && !mobileAccountRef.current.contains(event.target)) {
+        setIsMobileAccountOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -271,9 +276,93 @@ const Header = () => {
             ))}
           </ul>
           
-          {/* Login Button trong Mobile Sidebar */}
-          {!token && (
-            <div className="mobile-sidebar-footer">
+          {/* Login Button hoặc Account Dropdown trong Mobile Sidebar */}
+          <div className="mobile-sidebar-footer">
+            {token ? (
+              <div className="mobile-account-section" ref={mobileAccountRef}>
+                <button 
+                  className="mobile-account-btn"
+                  onClick={() => setIsMobileAccountOpen(v => !v)}
+                  aria-haspopup="menu"
+                  aria-expanded={isMobileAccountOpen}
+                >
+                  <i className="bi bi-person-circle me-2"></i>
+                  Tài khoản
+                  <i className={`bi bi-chevron-${isMobileAccountOpen ? 'up' : 'down'} ms-auto`}></i>
+                </button>
+                {isMobileAccountOpen && (
+                  <div className="mobile-account-dropdown">
+                    <Link 
+                      to="/profile" 
+                      className="mobile-account-menu-item" 
+                      onClick={() => {
+                        setIsMobileAccountOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      <i className="bi bi-info-circle me-2"></i>
+                      Thông tin cá nhân
+                    </Link>
+                    <Link 
+                      to="/profile/update" 
+                      className="mobile-account-menu-item" 
+                      onClick={() => {
+                        setIsMobileAccountOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      <i className="bi bi-pencil-square me-2"></i>
+                      Cập nhật thông tin
+                    </Link>
+                    <Link 
+                      to="/profile/password" 
+                      className="mobile-account-menu-item" 
+                      onClick={() => {
+                        setIsMobileAccountOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      <i className="bi bi-key me-2"></i>
+                      Đổi mật khẩu
+                    </Link>
+                    <Link 
+                      to="/booking-history" 
+                      className="mobile-account-menu-item" 
+                      onClick={() => {
+                        setIsMobileAccountOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      <i className="bi bi-clock-history me-2"></i>
+                      Lịch sử đặt chỗ
+                    </Link>
+                    {roles && roles.includes('ROLE_ADMIN') && (
+                      <Link 
+                        to="/admin/dashboard" 
+                        className="mobile-account-menu-item" 
+                        onClick={() => {
+                          setIsMobileAccountOpen(false);
+                          setIsMobileMenuOpen(false);
+                        }}
+                      >
+                        <i className="bi bi-gear me-2"></i>
+                        Admin
+                      </Link>
+                    )}
+                    <button 
+                      className="mobile-account-menu-item danger" 
+                      onClick={() => {
+                        handleLogout();
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      <i className="bi bi-box-arrow-right me-2"></i>
+                      Đăng xuất
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
               <button 
                 className="mobile-login-btn"
                 onClick={() => {
@@ -283,8 +372,8 @@ const Header = () => {
               >
                 Đăng nhập
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </header>

@@ -51,3 +51,58 @@ body {
   font-weight: 500;
 }
 
+/* Responsive Table Styles */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive table at 768px breakpoint */
+@media (max-width: 768px) {
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .table-responsive table {
+    width: 100%;
+    min-width: 600px; /* Ensure table doesn't get too compressed */
+    display: table;
+  }
+  
+  .table-responsive thead,
+  .table-responsive tbody,
+  .table-responsive tr {
+    display: table-row;
+  }
+  
+  .table-responsive th,
+  .table-responsive td {
+    display: table-cell;
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
+  
+  /* Optional: Make table scrollable horizontally */
+  .table-responsive::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .table-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .table-responsive::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  .table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+

@@ -531,7 +531,7 @@
 /* Mobile Sidebar Footer với Login Button */
 .mobile-sidebar-footer {
   margin-top: auto;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.5rem 1rem 1.5rem;
   border-top: 1px solid #e5e7eb;
   background: #f9fafb;
 }
@@ -551,6 +551,72 @@
 
 .mobile-login-btn:hover {
   background-color: #0000a0;
+}
+
+/* Mobile Account Section */
+.mobile-account-section {
+  width: 100%;
+  position: relative;
+}
+
+.mobile-account-btn {
+  width: 100%;
+  background-color: #000080;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-account-btn:hover {
+  background-color: #0000a0;
+}
+
+.mobile-account-dropdown {
+  margin-top: 0.5rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.mobile-account-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #111827;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.mobile-account-menu-item:last-child {
+  border-bottom: none;
+}
+
+.mobile-account-menu-item:hover {
+  background: #f3f4f6;
+}
+
+.mobile-account-menu-item.danger {
+  color: #dc2626;
+}
+
+.mobile-account-menu-item.danger:hover {
+  background: #fee2e2;
 }
 
 /* Reset mobile styles */
