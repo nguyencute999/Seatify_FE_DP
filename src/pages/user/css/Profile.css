@@ -200,6 +200,94 @@
   font-weight: 500;
 }
 
+/* Update Profile Page Styles */
+.update-profile-container {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem 0;
+}
+
+.update-profile-form {
+  max-width: 640px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.update-profile-form .form-label {
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.update-profile-form .form-control {
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.update-profile-form .form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.update-profile-form .form-control[type="file"] {
+  padding: 0.5rem;
+}
+
+.update-profile-form small.text-muted {
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.update-profile-form img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+.update-profile-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.update-profile-submit-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.update-profile-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.update-profile-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.update-profile-cancel-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.update-profile-cancel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Change Password Page Styles */
 .change-password-container {
   min-height: 100vh;
@@ -498,6 +586,69 @@
     border-radius: 6px;
     width: 100%;
   }
+
+  /* Update Profile Page */
+  .update-profile-container {
+    padding: 1.25rem 0;
+  }
+
+  .update-profile-container .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .update-profile-container h3 {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .update-profile-form {
+    padding: 1rem !important;
+    border-radius: 10px;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .update-profile-form .form-label {
+    font-size: 0.9rem;
+  }
+
+  .update-profile-form .form-control {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .update-profile-form .form-control[type="file"] {
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .update-profile-form small.text-muted {
+    font-size: 0.8rem;
+  }
+
+  .update-profile-form img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .update-profile-actions {
+    gap: 0.625rem;
+    margin-top: 0.875rem;
+  }
+
+  .update-profile-submit-btn,
+  .update-profile-cancel-btn {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .update-profile-container .alert {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.875rem;
+    border-radius: 6px;
+    width: 100%;
+  }
 }
 
 /* Responsive: Mobile 480px */
@@ -657,6 +808,75 @@
   .change-password-form span[style*="position: absolute"] i {
     font-size: 0.9rem;
   }
+
+  /* Update Profile Page */
+  .update-profile-container {
+    padding: 1rem 0;
+  }
+
+  .update-profile-container .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .update-profile-container h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .update-profile-form {
+    padding: 0.875rem !important;
+    border-radius: 8px;
+  }
+
+  .update-profile-form .form-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .update-profile-form .form-control {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+  }
+
+  .update-profile-form .form-control[type="file"] {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .update-profile-form small.text-muted {
+    font-size: 0.75rem;
+    margin-top: 0.2rem;
+  }
+
+  .update-profile-form img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .update-profile-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .update-profile-submit-btn,
+  .update-profile-cancel-btn {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+  }
+
+  .update-profile-container .alert {
+    font-size: 0.8rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    width: 100%;
+  }
 }
 
 /* Dark mode support (optional) */
@@ -718,5 +938,28 @@
 
   .change-password-form .form-label {
     color: #b0b0b0;
+  }
+
+  .update-profile-container {
+    background-color: #1a1a1a;
+  }
+
+  .update-profile-form {
+    background-color: #2d2d2d;
+    color: #ffffff;
+  }
+
+  .update-profile-form .form-control {
+    background-color: #3a3a3a;
+    border-color: #4a4a4a;
+    color: #ffffff;
+  }
+
+  .update-profile-form .form-label {
+    color: #b0b0b0;
+  }
+
+  .update-profile-form small.text-muted {
+    color: #888;
   }
 }

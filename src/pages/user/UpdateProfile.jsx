@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import userService from '../../services/userService';
+import './css/Profile.css';
 
 export default function UpdateProfile() {
   const [formData, setFormData] = useState({
@@ -132,17 +133,18 @@ export default function UpdateProfile() {
   }
 
   return (
-    <div className="container py-4 d-flex flex-column align-items-center">
-      <h3 className="mb-3">Cập nhật thông tin</h3>
+    <div className="update-profile-container">
+      <div className="container py-4 d-flex flex-column align-items-center">
+        <h3 className="mb-3">Cập nhật thông tin</h3>
 
-      {message && (
-        <div className="alert alert-success" role="alert">{message}</div>
-      )}
-      {error && (
-        <div className="alert alert-danger" role="alert">{error}</div>
-      )}
+        {message && (
+          <div className="alert alert-success" role="alert">{message}</div>
+        )}
+        {error && (
+          <div className="alert alert-danger" role="alert">{error}</div>
+        )}
 
-      <form onSubmit={handleSubmit} className="card p-4 w-50" style={{ maxWidth: '640px' }}>
+        <form onSubmit={handleSubmit} className="card update-profile-form">
         <div className="mb-3">
           <label htmlFor="fullName" className="form-label">
             Họ và tên <span className="text-danger">*</span>
@@ -216,23 +218,24 @@ export default function UpdateProfile() {
           )}
         </div>
 
-        <div className="d-flex gap-2">
+        <div className="update-profile-actions">
           <button 
             type="submit" 
-            className="btn btn-primary" 
+            className="btn btn-primary update-profile-submit-btn" 
             disabled={submitting}
           >
             {submitting ? 'Đang cập nhật...' : 'Cập nhật thông tin'}
           </button>
           <button 
             type="button" 
-            className="btn btn-secondary"
+            className="btn btn-secondary update-profile-cancel-btn"
             onClick={() => window.history.back()}
           >
             Hủy
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 }
