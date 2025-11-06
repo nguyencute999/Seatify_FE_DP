@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faLocationDot,
@@ -33,11 +34,10 @@ const Footer = () => {
           <div className="footer-section">
             <h4 className="section-title">Liên kết nhanh</h4>
             <ul className="footer-links">
-              <li><a href="/">Trang chủ</a></li>
-              <li><a href="/events">Sự kiện</a></li>
-              <li><a href="/news">Tin tức</a></li>
-              <li><a href="/about">Giới thiệu</a></li>
-              {/* <li><a href="/contact">Liên hệ</a></li> */}
+              <li><Link to="/">Trang chủ</Link></li>
+              <li><Link to="/events">Sự kiện</Link></li>
+              <li><Link to="/news">Tin tức</Link></li>
+              <li><Link to="/about">Giới thiệu</Link></li>
             </ul>
           </div>
 
