@@ -37,6 +37,9 @@ import NewsPage from '../pages/NewsPage';
 export default function AppRoutes() {
   return (
     <Routes>
+      {/* OAuth2 Redirect - Must be first to handle Google OAuth redirects */}
+      <Route path="/oauth2/redirect" element={<OAuth2RedirectPage />} />
+      
       {/* Auth Routes - Standalone pages without App layout */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
@@ -89,8 +92,6 @@ export default function AppRoutes() {
         <Route path="news" element={<AdminNewsSlide />} />
         <Route path="reports" element={<Reports />} />
       </Route>
-      
-      <Route path="/oauth2/redirect" element={<OAuth2RedirectPage />} />
     </Routes>
   );
 }
