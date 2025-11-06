@@ -131,6 +131,8 @@ const Header = () => {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
+      // Đóng account dropdown khi đóng mobile menu
+      setIsMobileAccountOpen(false);
     }
     return () => {
       document.body.style.overflow = '';
