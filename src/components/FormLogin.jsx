@@ -11,6 +11,7 @@ import {
   clearError,
   clearMessage 
 } from '../redux/auth/authSlice';
+import '../pages/auth/AuthPages.css';
 
 // UI Components với Bootstrap
 const Card = ({ className = '', children, ...props }) => {

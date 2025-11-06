@@ -1,9 +1,28 @@
-/* Auth Pages Styles */
+
+/* CSS Variables for consistent theming */
+:root {
+  --auth-primary: #667eea;
+  --auth-secondary: #764ba2;
+  --auth-text: #2d3748;
+  --auth-text-muted: #718096;
+  --auth-border: #e2e8f0;
+  --auth-bg: #f8fafc;
+  --auth-danger: #e53e3e;
+  --auth-success: #38a169;
+  --auth-shadow: rgba(0, 0, 0, 0.1);
+  --auth-shadow-lg: rgba(0, 0, 0, 0.15);
+  --auth-radius-sm: 8px;
+  --auth-radius-md: 10px;
+  --auth-radius-lg: 16px;
+  --auth-radius-xl: 20px;
+}
+
+/* Base Styles */
 .login-page,
 .register-page,
 .forgot-password-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--auth-primary) 0%, var(--auth-secondary) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,8 +40,8 @@
 .register-card,
 .forgot-password-card {
   background: white;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: var(--auth-radius-xl);
+  box-shadow: 0 20px 40px var(--auth-shadow);
   padding: 40px;
   animation: slideUp 0.6s ease-out;
 }
@@ -51,14 +70,15 @@
 .forgot-password-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--auth-text);
   margin-bottom: 10px;
+  line-height: 1.2;
 }
 
 .login-subtitle,
 .register-subtitle,
 .forgot-password-subtitle {
-  color: #718096;
+  color: var(--auth-text-muted);
   font-size: 1rem;
   margin: 0;
 }
@@ -77,7 +97,7 @@
 .form-label {
   display: block;
   font-weight: 600;
-  color: #2d3748;
+  color: var(--auth-text);
   margin-bottom: 8px;
   font-size: 0.9rem;
 }
@@ -85,16 +105,16 @@
 .form-control {
   width: 100%;
   padding: 12px 16px;
-  border: 2px solid #e2e8f0;
-  border-radius: 10px;
+  border: 2px solid var(--auth-border);
+  border-radius: var(--auth-radius-md);
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: #f8fafc;
+  background: var(--auth-bg);
 }
 
 .form-control:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--auth-primary);
   background: white;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
@@ -108,24 +128,25 @@
   padding: 14px;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: var(--auth-radius-md);
   border: none;
   transition: all 0.3s ease;
   margin-bottom: 20px;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--auth-primary) 0%, var(--auth-secondary) 100%);
   color: white;
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
 }
 
 .btn-primary:disabled {
   opacity: 0.7;
+  cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
@@ -144,14 +165,15 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: #e2e8f0;
+  background: var(--auth-border);
 }
 
 .divider span {
   background: white;
   padding: 0 20px;
-  color: #718096;
+  color: var(--auth-text-muted);
   font-size: 0.9rem;
+  position: relative;
 }
 
 .social-login {
@@ -161,19 +183,19 @@
 .btn-social {
   width: 100%;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: var(--auth-radius-md);
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .btn-outline-danger {
-  border: 2px solid #e53e3e;
-  color: #e53e3e;
+  border: 2px solid var(--auth-danger);
+  color: var(--auth-danger);
   background: white;
 }
 
 .btn-outline-danger:hover {
-  background: #e53e3e;
+  background: var(--auth-danger);
   color: white;
   transform: translateY(-2px);
 }
@@ -185,10 +207,11 @@
 .back-to-login-link,
 .back-to-email-link,
 .back-home-link {
-  color: #667eea;
+  color: var(--auth-primary);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .forgot-password-link:hover,
@@ -197,7 +220,7 @@
 .back-to-login-link:hover,
 .back-to-email-link:hover,
 .back-home-link:hover {
-  color: #764ba2;
+  color: var(--auth-secondary);
   text-decoration: none;
 }
 
@@ -205,7 +228,6 @@
 .back-to-email-link {
   display: inline-flex;
   align-items: center;
-  font-size: 0.9rem;
 }
 
 /* Loading State */
@@ -216,15 +238,15 @@
 
 /* Success/Error States */
 .text-success {
-  color: #38a169 !important;
+  color: var(--auth-success) !important;
 }
 
 .text-danger {
-  color: #e53e3e !important;
+  color: var(--auth-danger) !important;
 }
 
 .text-muted {
-  color: #718096 !important;
+  color: var(--auth-text-muted) !important;
 }
 
 /* Animation for form steps */
@@ -240,5 +262,342 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/*Styles (FormLogin) */
+.modal {
+  z-index: 1055;
+}
+
+.modal-dialog {
+  max-width: 500px;
+  margin: 1.75rem auto;
+}
+
+.modal-content {
+  border-radius: var(--auth-radius-lg);
+  border: none;
+  box-shadow: 0 20px 40px var(--auth-shadow-lg);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--auth-border);
+  padding: 24px 28px;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--auth-text);
+  margin: 0;
+}
+
+.modal-body {
+  padding: 28px;
+}
+
+.modal-body .text-muted {
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+
+/* Desktop 1024px */
+@media (max-width: 1024px) {
+  .login-page,
+  .register-page,
+  .forgot-password-page {
+    padding: 16px;
+  }
+
+  .login-container,
+  .register-container,
+  .forgot-password-container {
+    max-width: 480px;
+  }
+
+  .login-card,
+  .register-card,
+  .forgot-password-card {
+    padding: 32px;
+    border-radius: var(--auth-radius-lg);
+  }
+
+  .login-title,
+  .register-title,
+  .forgot-password-title {
+    font-size: 1.75rem;
+  }
+
+  .login-subtitle,
+  .register-subtitle,
+  .forgot-password-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .form-control {
+    padding: 11px 14px;
+    font-size: 0.95rem;
+  }
+
+  .btn-login,
+  .btn-register,
+  .btn-forgot,
+  .btn-reset {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  /* Modal */
+  .modal-dialog {
+    max-width: 480px;
+    margin: 1.5rem auto;
+  }
+
+  .modal-content {
+    border-radius: 14px;
+  }
+
+  .modal-header {
+    padding: 20px 24px;
+  }
+
+  .modal-title {
+    font-size: 1.4rem;
+  }
+
+  .modal-body {
+    padding: 24px;
+  }
+
+  .modal-body .text-muted {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* Tablet 768px */
+@media (max-width: 768px) {
+  .login-page,
+  .register-page,
+  .forgot-password-page {
+    padding: 12px;
+  }
+
+  .login-container,
+  .register-container,
+  .forgot-password-container {
+    max-width: 100%;
+  }
+
+  .login-card,
+  .register-card,
+  .forgot-password-card {
+    padding: 28px 24px;
+    border-radius: 12px;
+  }
+
+  .login-header,
+  .register-header,
+  .forgot-password-header {
+    margin-bottom: 24px;
+  }
+
+  .login-title,
+  .register-title,
+  .forgot-password-title {
+    font-size: 1.5rem;
+  }
+
+  .login-subtitle,
+  .register-subtitle,
+  .forgot-password-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .form-control {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    border-radius: var(--auth-radius-sm);
+  }
+
+  .btn-login,
+  .btn-register,
+  .btn-forgot,
+  .btn-reset {
+    padding: 11px;
+    font-size: 0.9rem;
+    border-radius: var(--auth-radius-sm);
+  }
+
+  .divider {
+    margin: 16px 0;
+  }
+
+  .divider span {
+    font-size: 0.85rem;
+    padding: 0 16px;
+  }
+
+  .btn-social {
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: var(--auth-radius-sm);
+  }
+
+  /* Modal */
+  .modal-dialog {
+    max-width: 95%;
+    margin: 1rem auto;
+  }
+
+  .modal-content {
+    border-radius: 12px;
+  }
+
+  .modal-header {
+    padding: 18px 20px;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+
+  .modal-body .text-muted {
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+
+  .nav-tabs {
+    font-size: 0.9rem;
+  }
+
+  .nav-tabs .nav-link {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile 480px */
+@media (max-width: 480px) {
+  .login-page,
+  .register-page,
+  .forgot-password-page {
+    padding: 10px;
+  }
+
+  .login-card,
+  .register-card,
+  .forgot-password-card {
+    padding: 24px 20px;
+    border-radius: var(--auth-radius-md);
+  }
+
+  .login-header,
+  .register-header,
+  .forgot-password-header {
+    margin-bottom: 20px;
+  }
+
+  .login-title,
+  .register-title,
+  .forgot-password-title {
+    font-size: 1.3rem;
+  }
+
+  .login-subtitle,
+  .register-subtitle,
+  .forgot-password-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .form-control {
+    padding: 9px 11px;
+    font-size: 0.85rem;
+  }
+
+  .btn-login,
+  .btn-register,
+  .btn-forgot,
+  .btn-reset {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  .forgot-password-link,
+  .register-link,
+  .login-link,
+  .back-to-login-link,
+  .back-to-email-link,
+  .back-home-link {
+    font-size: 0.85rem;
+  }
+
+  /* Modal */
+  .modal-dialog {
+    max-width: 100%;
+    margin: 0.5rem;
+  }
+
+  .modal-content {
+    border-radius: var(--auth-radius-md);
+  }
+
+  .modal-header {
+    padding: 16px 18px;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .modal-body {
+    padding: 18px;
+  }
+
+  .modal-body .text-muted {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+
+  .nav-tabs {
+    font-size: 0.85rem;
+  }
+
+  .nav-tabs .nav-link {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .nav-tabs .nav-link i {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.85rem;
+    padding: 8px 12px;
   }
 }
