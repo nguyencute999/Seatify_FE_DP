@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import userService from '../../services/userService';
+import './css/Profile.css';
 
 export default function ChangePassword() {
   const [oldPassword, setOldPassword] = useState('');
@@ -54,17 +55,18 @@ export default function ChangePassword() {
   };
 
   return (
-    <div className="container py-4 d-flex flex-column align-items-center">
-      <h3 className="mb-3">Đổi mật khẩu</h3>
+    <div className="change-password-container">
+      <div className="container py-4 d-flex flex-column align-items-center">
+        <h3 className="mb-3">Đổi mật khẩu</h3>
 
-      {message && (
-        <div className="alert alert-success" role="alert">{message}</div>
-      )}
-      {error && (
-        <div className="alert alert-danger" role="alert">{error}</div>
-      )}
+        {message && (
+          <div className="alert alert-success" role="alert">{message}</div>
+        )}
+        {error && (
+          <div className="alert alert-danger" role="alert">{error}</div>
+        )}
 
-      <form onSubmit={handleSubmit} className="card p-3 w-50" style={{ maxWidth: '640px' }}>
+        <form onSubmit={handleSubmit} className="card change-password-form">
         <div className="mb-3">
           <label className="form-label">Mật khẩu hiện tại</label>
           <div style={{ position: 'relative' }}>
@@ -144,6 +146,7 @@ export default function ChangePassword() {
           {submitting ? 'Đang đổi...' : 'Đổi mật khẩu'}
         </button>
       </form>
+      </div>
     </div>
   );
 }

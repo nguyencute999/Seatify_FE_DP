@@ -472,6 +472,438 @@
   margin-bottom: 0;
 }
 
+/* Responsive: Desktop 1024px */
+@media (max-width: 1024px) {
+  .events-page .container-fluid {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* Header Section */
+  .events-page .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .events-page .d-flex.justify-content-between .text-muted {
+    font-size: 0.9rem;
+  }
+
+  /* Filter Section */
+  .events-filter {
+    padding: 1rem;
+  }
+
+  .events-filter .row.g-3 {
+    gap: 1rem !important;
+  }
+
+  /* Search and Tabs */
+  .events-search input {
+    height: 42px;
+    font-size: 0.95rem;
+  }
+
+  /* Time Filter */
+  .time-filter-container {
+    padding: 0.75rem;
+  }
+
+  .time-filter-label {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .time-filter-buttons {
+    gap: 0.6rem;
+  }
+
+  .time-filter-btn {
+    padding: 0.55rem 1rem;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+
+  /* Event Cards Grid */
+  .events-page .col-lg-4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .event-card {
+    border-radius: 10px;
+  }
+
+  .event-thumbnail img {
+    height: 180px !important;
+  }
+
+  /* Event Card Content */
+  .event-card .card-title {
+    font-size: 1.15rem;
+  }
+
+  .event-card .card-text {
+    font-size: 0.9rem;
+  }
+
+  .event-card small {
+    font-size: 0.85rem;
+  }
+
+  /* Pagination */
+  .pagination-container {
+    margin-top: 2rem;
+    padding: 0.75rem 0;
+  }
+
+  .pagination-btn {
+    min-width: 42px;
+    height: 42px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive: Tablet 768px */
+@media (max-width: 768px) {
+  .events-page .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Header Section */
+  .events-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .events-page .d-flex.justify-content-between .text-muted {
+    font-size: 0.85rem;
+  }
+
+  /* Filter Section */
+  .events-filter {
+    padding: 0.875rem;
+    border-radius: 10px;
+  }
+
+  .events-filter .row.g-3 {
+    gap: 0.75rem !important;
+  }
+
+  .events-filter .col-md-6 {
+    margin-bottom: 0.75rem;
+  }
+
+  /* Search and Tabs */
+  .events-search input {
+    height: 40px;
+    font-size: 0.9rem;
+    padding-left: 2.25rem;
+  }
+
+  .events-search .search-icon {
+    left: 0.65rem;
+    font-size: 0.95rem;
+  }
+
+  /* Tabs - Stack vertically on tablet */
+  .events-filter .col-md-6:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Time Filter */
+  .time-filter-container {
+    padding: 0.625rem;
+  }
+
+  .time-filter-label {
+    font-size: 0.9rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .time-filter-label i {
+    font-size: 0.95rem;
+  }
+
+  .time-filter-buttons {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .time-filter-btn {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.85rem;
+    min-width: 110px;
+    flex: 1 1 auto;
+  }
+
+  .time-filter-btn i {
+    font-size: 0.9rem;
+  }
+
+  /* Event Cards Grid - 2 columns on tablet */
+  .events-page .row.g-4 {
+    gap: 1rem !important;
+  }
+
+  .events-page .col-lg-4 {
+    margin-bottom: 1rem;
+  }
+
+  .event-card {
+    border-radius: 8px;
+  }
+
+  .event-thumbnail img {
+    height: 160px !important;
+  }
+
+  /* Event Card Content */
+  .event-card .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .event-card .card-text {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .event-card small {
+    font-size: 0.8rem;
+  }
+
+  .event-card .btn {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Pagination */
+  .pagination-container {
+    margin-top: 1.5rem;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+
+  .pagination-btn {
+    min-width: 38px;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+
+  /* Carousel adjustments */
+  .carousel-single-row .carousel-item {
+    min-width: 280px;
+    max-width: 320px;
+  }
+
+  .carousel-nav-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  .carousel-nav-left {
+    left: 10px;
+  }
+
+  .carousel-nav-right {
+    right: 10px;
+  }
+}
+
+/* Responsive: Mobile 480px */
+@media (max-width: 480px) {
+  .events-page .container-fluid {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  /* Header Section */
+  .events-page h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .events-page .d-flex.justify-content-between {
+    gap: 0.75rem;
+  }
+
+  .events-page .d-flex.justify-content-between .text-muted {
+    font-size: 0.8rem;
+  }
+
+  /* Filter Section */
+  .events-filter {
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .events-filter .row.g-3 {
+    gap: 0.5rem !important;
+  }
+
+  .events-filter .col-md-6 {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Search and Tabs */
+  .events-search input {
+    height: 38px;
+    font-size: 0.875rem;
+    padding-left: 2rem;
+    border-radius: 8px;
+  }
+
+  .events-search .search-icon {
+    left: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* Time Filter */
+  .time-filter-container {
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .time-filter-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .time-filter-label i {
+    font-size: 0.9rem;
+  }
+
+  .time-filter-buttons {
+    gap: 0.4rem;
+  }
+
+  .time-filter-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+    min-width: 100px;
+    flex: 1 1 calc(50% - 0.2rem);
+    border-radius: 8px;
+  }
+
+  .time-filter-btn i {
+    font-size: 0.85rem;
+    margin-right: 0.25rem;
+  }
+
+  /* Event Cards Grid - 1 column on mobile */
+  .events-page .row.g-4 {
+    gap: 0.75rem !important;
+  }
+
+  .events-page .col-lg-4,
+  .events-page .col-md-6 {
+    margin-bottom: 0.75rem;
+  }
+
+  .event-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .event-thumbnail img {
+    height: 180px !important;
+  }
+
+  /* Event Card Content */
+  .event-card .card-body {
+    padding: 1rem;
+  }
+
+  .event-card .card-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .event-card .card-text {
+    font-size: 0.85rem;
+    margin-bottom: 0.625rem;
+    line-height: 1.5;
+  }
+
+  .event-card small {
+    font-size: 0.75rem;
+  }
+
+  .event-card .btn {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.65rem;
+    white-space: nowrap;
+  }
+
+  .event-card .d-flex.gap-2 {
+    gap: 0.5rem !important;
+  }
+
+  /* Pagination */
+  .pagination-container {
+    margin-top: 1.25rem;
+    padding: 0.5rem 0;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .pagination-btn {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+
+  /* Carousel adjustments */
+  .carousel-single-row {
+    padding: 15px 0;
+  }
+
+  .carousel-single-row .carousel-item {
+    min-width: 260px;
+    max-width: 280px;
+  }
+
+  .carousel-nav-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .carousel-nav-left {
+    left: 8px;
+  }
+
+  .carousel-nav-right {
+    right: 8px;
+  }
+
+  /* Empty States */
+  .events-empty {
+    padding: 2rem 0.75rem;
+  }
+
+  .events-empty i {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .events-empty h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .events-empty p {
+    font-size: 0.9rem;
+  }
+}
+
 /* Animation Classes */
 .fade-in {
   animation: fadeIn 0.5s ease-in-out;
