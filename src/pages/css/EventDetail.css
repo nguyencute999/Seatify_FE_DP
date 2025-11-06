@@ -104,11 +104,17 @@
   gap: 0.5rem;
   font-size: 1.1rem;
   font-weight: 500;
+  color: #ffffff;
+}
+
+.meta-item span {
+  color: #ffffff;
 }
 
 .meta-item i {
   font-size: 1.2rem;
-  opacity: 0.9;
+  color: #ffffff;
+  opacity: 0.95;
 }
 
 /* Main Content */
@@ -402,10 +408,16 @@
 
   .meta-item {
     font-size: 1rem;
+    color: #ffffff;
+  }
+
+  .meta-item span {
+    color: #ffffff;
   }
 
   .meta-item i {
     font-size: 1.1rem;
+    color: #ffffff;
   }
 
   .status-badge-large {
@@ -501,10 +513,16 @@
 
   .meta-item {
     font-size: 0.95rem;
+    color: #ffffff;
+  }
+
+  .meta-item span {
+    color: #ffffff;
   }
 
   .meta-item i {
     font-size: 1rem;
+    color: #ffffff;
   }
 
   .status-badge-large {
@@ -632,10 +650,16 @@
 
   .meta-item {
     font-size: 0.875rem;
+    color: #ffffff;
+  }
+
+  .meta-item span {
+    color: #ffffff;
   }
 
   .meta-item i {
     font-size: 0.95rem;
+    color: #ffffff;
   }
 
   .status-badge-large {

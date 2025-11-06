@@ -169,26 +169,32 @@ const Profile = ({ user = null }) => {
               </CardHeader>
               <CardContent className="p-4">
                 <div className="profile-info-grid">
-                  <div className="profile-info-item d-flex justify-content-between align-items-center py-2">
-                    <div className="d-flex align-items-center">
+                  <div className="profile-info-item">
+                    <div className="profile-info-header d-flex align-items-center">
                       <i className="bi bi-person profile-info-icon me-2"></i>
                       <span className="profile-info-label">Họ và tên:</span>
                     </div>
-                    <span className="profile-info-value">{displayName || '—'}</span>
+                    <div className="profile-info-data">
+                      <span className="profile-info-value">{displayName || '—'}</span>
+                    </div>
                   </div>
-                  <div className="profile-info-item d-flex justify-content-between align-items-center py-2">
-                    <div className="d-flex align-items-center">
+                  <div className="profile-info-item">
+                    <div className="profile-info-header d-flex align-items-center">
                       <i className="bi bi-envelope profile-info-icon me-2"></i>
                       <span className="profile-info-label">Email:</span>
                     </div>
-                    <span className="profile-info-value">{displayEmail}</span>
+                    <div className="profile-info-data">
+                      <span className="profile-info-value">{displayEmail}</span>
+                    </div>
                   </div>
-                  <div className="profile-info-item d-flex justify-content-between align-items-center py-2">
-                    <div className="d-flex align-items-center">
+                  <div className="profile-info-item">
+                    <div className="profile-info-header d-flex align-items-center">
                       <i className="bi bi-telephone profile-info-icon me-2"></i>
                       <span className="profile-info-label">Số điện thoại:</span>
                     </div>
-                    <span className="profile-info-value">{displayPhone || '—'}</span>
+                    <div className="profile-info-data">
+                      <span className="profile-info-value">{displayPhone || '—'}</span>
+                    </div>
                   </div>
                 </div>
               </CardContent>
