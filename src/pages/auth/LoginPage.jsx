@@ -27,6 +27,9 @@ const LoginPage = () => {
     if (token && roles && roles.length > 0 && !hasRedirectedRef.current) {
       hasRedirectedRef.current = true;
       
+      // Clear any existing messages before showing success message
+      dispatch(clearMessage());
+      
       // Save to localStorage
       localStorage.setItem('auth', JSON.stringify({
         token,
@@ -35,6 +38,7 @@ const LoginPage = () => {
         timestamp: Date.now()
       }));
 
+      // Show success message immediately
       if (roles.includes('ROLE_ADMIN')) {
         toast.success('Đăng nhập thành công! Chuyển hướng đến Admin Dashboard...');
         navigate('/admin/dashboard', { replace: true });
@@ -43,7 +47,7 @@ const LoginPage = () => {
         navigate('/', { replace: true });
       }
     }
-  }, [token, roles, navigate, formData.email]);
+  }, [token, roles, navigate, formData.email, dispatch]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

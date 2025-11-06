@@ -5,8 +5,15 @@ import { clearError as clearAuthError, clearMessage as clearAuthMessage } from '
 
 const GlobalToastListener = () => {
   const dispatch = useDispatch();
-  const { error: authError, message: authMessage } = useSelector(state => state.auth);
+  const { error: authError, message: authMessage, token } = useSelector(state => state.auth);
   const lastShownRef = useRef({ authError: null, authMessage: null });
+
+  // Reset refs when user logs out (token becomes null)
+  useEffect(() => {
+    if (!token) {
+      lastShownRef.current = { authError: null, authMessage: null };
+    }
+  }, [token]);
 
   useEffect(() => {
     if (authError && lastShownRef.current.authError !== authError) {
@@ -17,12 +24,17 @@ const GlobalToastListener = () => {
   }, [authError, dispatch]);
 
   useEffect(() => {
-    if (authMessage && lastShownRef.current.authMessage !== authMessage) {
+    // Only show message if user is authenticated (has token)
+    // This prevents showing login success messages after logout
+    if (authMessage && token && lastShownRef.current.authMessage !== authMessage) {
       lastShownRef.current.authMessage = authMessage;
       toast.success(authMessage);
       dispatch(clearAuthMessage());
+    } else if (authMessage && !token) {
+      // If message exists but user is not authenticated, clear it silently
+      dispatch(clearAuthMessage());
     }
-  }, [authMessage, dispatch]);
+  }, [authMessage, token, dispatch]);
 
   return null;
 };
