@@ -63,11 +63,11 @@ const OAuth2RedirectPage = () => {
         // Show success message and delay navigation to ensure toast is visible
         if (rolesArray.includes('ROLE_ADMIN')) {
           // Show toast first
-          toast.success("Đăng nhập Google thành công! Chuyển hướng đến Admin Dashboard...", {
-            autoClose: 3000,
-            hideProgressBar: false,
-            position: 'top-right'
-          });
+          // toast.success("Đăng nhập Google thành công! Chuyển hướng đến Admin Dashboard...", {
+          //   autoClose: 3000,
+          //   hideProgressBar: false,
+          //   position: 'top-right'
+          // });
           // Delay navigation to ensure toast is visible
           setTimeout(() => {
             navigate("/admin/dashboard", { replace: true });

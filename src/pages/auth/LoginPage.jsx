@@ -41,11 +41,11 @@ const LoginPage = () => {
       // Show success message immediately and delay navigation to ensure toast is visible
       if (roles.includes('ROLE_ADMIN')) {
         // Show toast first
-        toast.success('Đăng nhập thành công! Chuyển hướng đến Admin Dashboard...', {
-          autoClose: 3000,
-          hideProgressBar: false,
-          position: 'top-right'
-        });
+        // toast.success('Đăng nhập thành công! Chuyển hướng đến Admin Dashboard...', {
+        //   autoClose: 3000,
+        //   hideProgressBar: false,
+        //   position: 'top-right'
+        // });
         // Delay navigation to ensure toast is visible
         setTimeout(() => {
           navigate('/admin/dashboard', { replace: true });
