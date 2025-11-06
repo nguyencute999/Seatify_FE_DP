@@ -38,13 +38,29 @@ const LoginPage = () => {
         timestamp: Date.now()
       }));
 
-      // Show success message immediately
+      // Show success message immediately and delay navigation to ensure toast is visible
       if (roles.includes('ROLE_ADMIN')) {
-        toast.success('Đăng nhập thành công! Chuyển hướng đến Admin Dashboard...');
-        navigate('/admin/dashboard', { replace: true });
+        // Show toast first
+        toast.success('Đăng nhập thành công! Chuyển hướng đến Admin Dashboard...', {
+          autoClose: 3000,
+          hideProgressBar: false,
+          position: 'top-right'
+        });
+        // Delay navigation to ensure toast is visible
+        setTimeout(() => {
+          navigate('/admin/dashboard', { replace: true });
+        }, 300);
       } else {
-        toast.success('Đăng nhập thành công!');
-        navigate('/', { replace: true });
+        // Show toast first
+        toast.success('Đăng nhập thành công!', {
+          autoClose: 3000,
+          hideProgressBar: false,
+          position: 'top-right'
+        });
+        // Delay navigation to ensure toast is visible
+        setTimeout(() => {
+          navigate('/', { replace: true });
+        }, 300);
       }
     }
   }, [token, roles, navigate, formData.email, dispatch]);

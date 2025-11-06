@@ -60,12 +60,29 @@ const OAuth2RedirectPage = () => {
       
       if (!shownRef.current) {
         shownRef.current = true;
-        toast.success("Đăng nhập Google thành công!");
-        // Redirect based on user role immediately; ToastContainer is global so toast persists
+        // Show success message and delay navigation to ensure toast is visible
         if (rolesArray.includes('ROLE_ADMIN')) {
-          navigate("/admin/dashboard", { replace: true });
+          // Show toast first
+          toast.success("Đăng nhập Google thành công! Chuyển hướng đến Admin Dashboard...", {
+            autoClose: 3000,
+            hideProgressBar: false,
+            position: 'top-right'
+          });
+          // Delay navigation to ensure toast is visible
+          setTimeout(() => {
+            navigate("/admin/dashboard", { replace: true });
+          }, 300);
         } else {
-          navigate("/", { replace: true });
+          // Show toast first
+          toast.success("Đăng nhập Google thành công!", {
+            autoClose: 3000,
+            hideProgressBar: false,
+            position: 'top-right'
+          });
+          // Delay navigation to ensure toast is visible
+          setTimeout(() => {
+            navigate("/", { replace: true });
+          }, 300);
         }
       }
     } catch (error) {
