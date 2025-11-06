@@ -312,9 +312,13 @@
   }
 
   .login-container,
-  .register-container,
   .forgot-password-container {
     max-width: 480px;
+  }
+
+  /* Register page needs wider container for 2-column layout */
+  .register-container {
+    max-width: 600px;
   }
 
   .login-card,
@@ -347,6 +351,21 @@
   .btn-reset {
     padding: 12px;
     font-size: 0.95rem;
+  }
+
+  /* Register page specific styles */
+  .register-form .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .register-form .row > [class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .register-form .form-group {
+    margin-bottom: 18px;
   }
 
   /* Modal */
@@ -392,10 +411,72 @@
   }
 
   .login-card,
-  .register-card,
   .forgot-password-card {
     padding: 28px 24px;
     border-radius: 12px;
+  }
+
+  /* Register card specific padding for tablet */
+  .register-card {
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
+
+  /* Register page: stack columns on tablet */
+  .register-form .row {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  .register-form .row > [class*="col-md-"] {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+
+  /* Register page specific optimizations */
+  .register-form .form-group {
+    margin-bottom: 16px;
+  }
+
+  .register-form .row:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .register-form .row + .row {
+    margin-top: 0;
+  }
+
+  /* Password visibility icon positioning */
+  .register-form .form-group [style*="position: relative"] {
+    position: relative;
+  }
+
+  .register-form .form-group [style*="position: relative"] i {
+    font-size: 0.95rem;
+    color: var(--auth-text-muted);
+    transition: color 0.2s ease;
+  }
+
+  .register-form .form-group [style*="position: relative"] span {
+    padding: 2px;
+    min-width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .register-form .form-group [style*="position: relative"] span:hover i {
+    color: var(--auth-primary);
+  }
+
+  /* Register form spacing */
+  .register-form .row + .row {
+    margin-top: 0;
   }
 
   .login-header,
@@ -599,5 +680,51 @@
   .btn {
     font-size: 0.85rem;
     padding: 8px 12px;
+  }
+
+  /* Register page: ensure single column on mobile */
+  .register-form .row > [class*="col-md-"] {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .register-form .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Register page mobile optimizations */
+  .register-form .form-group {
+    margin-bottom: 14px;
+  }
+
+  .register-card {
+    padding: 20px 16px;
+  }
+
+  /* Password visibility icons on mobile */
+  .register-form .form-group [style*="position: relative"] span {
+    right: 8px !important;
+    padding: 4px;
+  }
+
+  .register-form .form-group [style*="position: relative"] i {
+    font-size: 0.9rem;
+  }
+
+  /* Social login button on mobile */
+  .register-form .btn-social {
+    font-size: 0.85rem;
+    padding: 9px;
+  }
+
+  /* Links spacing */
+  .register-form .text-center {
+    margin-top: 16px;
+  }
+
+  .register-form .text-center.mt-4 {
+    margin-top: 20px !important;
   }
 }
